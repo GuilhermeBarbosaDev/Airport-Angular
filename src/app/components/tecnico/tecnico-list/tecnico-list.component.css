@@ -14,3 +14,11 @@ mat-form-field{
 button{
   width: 100%;
 }
+
+.edit{
+  color: black;
+}
+
+.delete{
+  color: black;
+}

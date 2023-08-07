@@ -15,7 +15,7 @@ constructor(private router: Router, private authService: AuthService, private to
 }
 
 ngOnInit(): void {
-    this.router.navigate(['home'])
+    this.router.navigate(['tecnicos/create'])
 }
 
 logout(){
