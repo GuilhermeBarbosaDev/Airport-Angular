@@ -16,6 +16,10 @@ import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
+import { AeroportoListComponent } from './components/aeroporto/aeroporto-list/aeroporto-list.component';
+import { VooListComponent } from './components/voo/voo-list/voo-list.component';
+import { VooCreateComponent } from './components/voo/voo-create/voo-create.component';
+import { VooUpdateComponent } from './components/voo/voo-update/voo-update.component';
 
 const routes: Routes = [
   {
@@ -38,7 +42,13 @@ const routes: Routes = [
     { path: 'chamados', component: ChamadoListComponent },
     { path: 'chamados/create', component: ChamadoCreateComponent },
     { path: 'chamados/update/:id', component: ChamadoUpdateComponent },
-    { path: 'chamados/read/:id', component: ChamadoReadComponent }
+    { path: 'chamados/read/:id', component: ChamadoReadComponent },
+
+    { path: 'aeroportos', component: AeroportoListComponent },
+
+    { path: 'voo', component: VooListComponent },
+    { path: 'voo/create', component: VooCreateComponent },
+    { path: 'voo/update/:id', component: VooUpdateComponent },
   ]
 
 }

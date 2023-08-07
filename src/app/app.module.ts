@@ -40,7 +40,12 @@ import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-read.component';
-
+import { AeroportoListComponent } from './components/aeroporto/aeroporto-list/aeroporto-list.component';
+import { VooListComponent } from './components/voo/voo-list/voo-list.component';
+import { VooCreateComponent } from './components/voo/voo-create/voo-create.component';
+import { VooUpdateComponent } from './components/voo/voo-update/voo-update.component';
+import { ClassAirListComponent } from './components/classAir/class-air-list/class-air-list.component';
+import { ClassAirUpdateComponent } from './components/classAir/class-air-update/class-air-update.component';
 
 
 @NgModule({
@@ -61,7 +66,13 @@ import { ChamadoReadComponent } from './components/chamado/chamado-read/chamado-
     ChamadoListComponent,
     ChamadoCreateComponent,
     ChamadoUpdateComponent,
-    ChamadoReadComponent
+    ChamadoReadComponent,
+    AeroportoListComponent,
+    VooListComponent,
+    VooCreateComponent,
+    VooUpdateComponent,
+    ClassAirListComponent,
+    ClassAirUpdateComponent
 
   ],
   imports: [
