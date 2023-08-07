@@ -1,0 +1,28 @@
+<div class="container">
+    
+    <form class="form mat-elevation-z8">
+        <h1> Horizon</h1>
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>E-mail</mat-label>
+
+          <input [(ngModel)] ="credenciais.email" name = 'email'
+            required
+           matInput 
+           placeholder="Ex. horizon@gmail.com">
+        </mat-form-field>
+   
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+
+            <input [(ngModel)] = "credenciais.senha" name="senha" 
+            required
+            type="password" 
+            matInput 
+            placeholder="Ex. 123">
+          </mat-form-field>
+
+          <button (click)= "login()" class="full-width mat-elevation-z2" mat-stroked-button>Login</button>
+    </form>
+      
+</div>
