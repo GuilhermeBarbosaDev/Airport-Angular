@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Tickets } from 'src/app/models/chamado';
+import { ChamadoService } from 'src/app/services/chamado.service';
 
 @Component({
   selector: 'app-chamado-list',
@@ -6,5 +10,63 @@ import { Component } from '@angular/core';
   styleUrls: ['./chamado-list.component.css']
 })
 export class ChamadoListComponent {
+
+  ELEMENT_DATA: Tickets[] = []
+  FILTERED_DATA: Tickets[] = []
+
+  displayedColumns: string[] = ['id', 'titulo', 'nomeCliente', 'nomeTecnico', 'dataAbertura', 'prioridade', 'status', 'actions'];
+  dataSource = new MatTableDataSource<Tickets>(this.ELEMENT_DATA);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  constructor(private service: ChamadoService) { }
+
+  ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll() {
+    this.service.findAll().subscribe(resposta => {
+      this.ELEMENT_DATA = resposta;
+      this.dataSource = new MatTableDataSource<Tickets>(resposta);
+      this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  retornaStatus(status: any): string {
+    if (status == '0') {
+      return 'ABERTO'
+    } else if (status == '1') {
+      return 'EM ANDAMENTO'
+    } else {
+      return 'ENCERRADO'
+    }
+  }
+
+  retornaPrioridade(prioridade: any): string {
+    if (prioridade == '0') {
+      return 'BAIXA'
+    } else if (prioridade == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
+
+  orderByStatus(status: any): void {
+    let list: Tickets[] = [];
+    this.ELEMENT_DATA.forEach(element => {
+      if (element.status == status) {
+        list.push(element);
+      };
+    });
+    this.FILTERED_DATA = list;
+    this.dataSource = new MatTableDataSource<Tickets>(list);
+    this.dataSource.paginator = this.paginator;
+  }
 
 }
