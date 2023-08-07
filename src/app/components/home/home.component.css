@@ -1,7 +1,7 @@
 .card{
     width: 50rem;
     margin: 1rem auto;
-    background: linear-gradient(90deg, rgba(172,200,233,1) 0%, rgba(124,154,242,1) 100%);
+    background: linear-gradient(90deg, rgb(49, 61, 75) 0%, rgba(124,154,242,1) 100%);
 }
 
 .names{
