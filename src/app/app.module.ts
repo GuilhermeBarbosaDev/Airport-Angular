@@ -100,7 +100,7 @@ import { ClassAirUpdateComponent } from './components/classAir/class-air-update/
       timeOut: 3000,
       closeButton: true,
       progressBar: true
-    })
+    }),
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

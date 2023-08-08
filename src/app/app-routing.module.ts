@@ -20,6 +20,8 @@ import { AeroportoListComponent } from './components/aeroporto/aeroporto-list/ae
 import { VooListComponent } from './components/voo/voo-list/voo-list.component';
 import { VooCreateComponent } from './components/voo/voo-create/voo-create.component';
 import { VooUpdateComponent } from './components/voo/voo-update/voo-update.component';
+import { ClassAirListComponent } from './components/classAir/class-air-list/class-air-list.component';
+import { ClassAirUpdateComponent } from './components/classAir/class-air-update/class-air-update.component';
 
 const routes: Routes = [
   {
@@ -49,6 +51,9 @@ const routes: Routes = [
     { path: 'voo', component: VooListComponent },
     { path: 'voo/create', component: VooCreateComponent },
     { path: 'voo/update/:id', component: VooUpdateComponent },
+
+    { path: 'classAir', component: ClassAirListComponent },
+    { path: 'classAir/update/:id', component: ClassAirUpdateComponent },
   ]
 
 }
